@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7f6;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   STYLE UNTUK HALAMAN UTAMA (INDEX)
+   ========================================= */
+.navbar {
+  transition: all 0.3s ease;
+  background-color: rgba(13, 110, 253, 0.95) !important;
+  backdrop-filter: blur(5px);
+}
+
+.hero {
+  background:
+    linear-gradient(rgba(13, 110, 253, 0.85), rgba(10, 88, 202, 0.95)),
+    url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1350")
+      center/cover;
+  padding: 140px 0 100px;
+  border-radius: 0 0 50px 50px;
+  color: white;
+}
+
+.filter-box {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin-top: -60px;
+  position: relative;
+  z-index: 10;
+}
+
+.card-kos {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s;
+  background: white;
+  height: 100%;
+}
+
+.card-kos:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(13, 110, 253, 0.15);
+}
+
+.card-img-wrapper {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-kos:hover .card-img-wrapper img {
+  transform: scale(1.1);
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.login-bg {
+  background: linear-gradient(135deg, #f4f7f6 0%, #e0e8f5 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  height: 350px;
+  border: 1px solid #ddd;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.fasilitas-badge {
+  background: #e9ecef;
+  color: #495057;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-right: 5px;
+  margin-bottom: 8px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.gallery-img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.gallery-img:hover {
+  filter: brightness(0.8);
+}
+
+.main-img {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Animasi Hamburger Menu */
+.navbar-toggler {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.animated-icon {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+}
+
+.animated-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.animated-icon span:nth-child(1) {
+  top: 0px;
+}
+.animated-icon span:nth-child(2) {
+  top: 8px;
+}
+.animated-icon span:nth-child(3) {
+  top: 16px;
+}
+
+.animated-icon.open span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+.animated-icon.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+.animated-icon.open span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}
+
+/* =========================================
+   STYLE UNTUK DASHBOARD (ADMIN/PEMILIK/MHS)
+   ========================================= */
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.sidebar-brand {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.sidebar-brand img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.nav-pills .nav-link {
+  color: #555;
+  font-weight: 500;
+  padding: 12px 20px;
+  margin-bottom: 5px;
+  border-radius: 0 25px 25px 0;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+.nav-pills .nav-link:hover {
+  background-color: #f0f4f8;
+  color: #0d6efd;
+}
+.nav-pills .nav-link.active {
+  background-color: #0d6efd;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(13, 110, 253, 0.2);
+}
+.nav-pills .nav-link i {
+  width: 24px;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.main-wrapper {
+  margin-left: 260px !important;
+  width: calc(100% - 260px) !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.top-header {
+  background-color: #0d6efd;
+  color: white;
+  padding: 20px 30px 60px 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-container {
+  margin-top: -40px;
+  padding: 0 30px 30px 30px;
+  flex-grow: 1;
+  position: relative;
+  z-index: 10;
+}
+.custom-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  overflow: hidden;
+}
+.custom-card-header {
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE RULES HP)
+   ========================================= */
+@media (max-width: 991.98px) {
+  .collapsing {
+    transition: height 0.4s ease-in-out;
+  }
+
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* PERBAIKAN: Mengubah teks keluhan dari putih menjadi biru di mode HP */
+  .navbar-collapse .text-white {
+    color: #0d6efd !important;
+    text-align: center;
+    display: block;
+    background-color: #f4f7f6;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+  }
+
+  .navbar-collapse .btn-light {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+    border: none;
+  }
+  .navbar-collapse .btn-outline-light {
+    color: #dc3545 !important;
+    border: 1px solid #dc3545 !important;
+    background-color: transparent !important;
+  }
+
+  /* Dashboard Responsif di HP */
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+  .sidebar.show {
+    transform: translateX(0);
+    box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .main-wrapper {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .top-header {
+    padding: 15px 15px 50px 15px;
+    flex-direction: row;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .top-header h4 {
+    font-size: 1.2rem;
+  }
+  .top-header p {
+    font-size: 0.85rem;
+  }
+  .content-container {
+    padding: 0 15px 30px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-pills .nav-link {
+    font-size: 0.95rem;
+    padding: 10px 15px;
+  }
+  .custom-card-header {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
